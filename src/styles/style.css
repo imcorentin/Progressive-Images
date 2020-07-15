@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.App {
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.progressive-images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.image-container {
+  position: relative;
+  height: 450px;
+  width: 350px;
+  background-color: #f2f2f2;
+  overflow: hidden;
+  margin: 25px;
+}
+
+.image-container img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.image-container .small_size,
+.image-container .full_size {
+  width: 100%;
+  height: 100%;
+}
+
+.image-container .small_size {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-transition: opacity 100ms 400ms;
+  transition: opacity 100ms 400ms;
+}
+
+.image-container .small_size img {
+  -webkit-filter: blur(20px);
+          filter: blur(20px);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: visibility 0ms ease 400ms;
+  transition: visibility 0ms ease 400ms;
+}
+
+.image-container .small_size.is-loading {
+  opacity: 1;
+}
+
+.image-container .small_size.is-loading img {
+  visibility: visible;
+}
+
+.image-container .small_size.is-loaded {
+  opacity: 0;
+}
+
+.image-container .small_size.is-loaded img {
+  visibility: hidden;
+}
+
+.image-container .full_size {
+  -webkit-transition: opacity 400ms ease 0ms;
+  transition: opacity 400ms ease 0ms;
+}
+
+.image-container .full_size.is-loading {
+  opacity: 0;
+}
+
+.image-container .full_size.is-loaded {
+  opacity: 1;
+}
+
+.project_source {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+}
+
+.project_source svg {
+  width: 30px;
+}
+/*# sourceMappingURL=style.css.map */

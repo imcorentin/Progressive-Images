@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.progressive-images{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.image-container {
+  position: relative;
+  height: 450px;
+  width: 350px;
+  background-color: rgba(242, 242, 242, 1);
+  overflow: hidden;
+  margin: 25px;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .small_size,
+  .full_size{
+    width: 100%;
+    height: 100%;
+  }
+
+  .small_size{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateZ(0);
+    transition: opacity 100ms 400ms;
+
+    img {
+      filter: blur(20px);
+      transform: scale(1.1);
+      transition: visibility 0ms ease 400ms;
+    }
+    
+    &.is-loading{
+      opacity: 1;
+
+      img{
+        visibility: visible;
+      }
+    }
+    &.is-loaded{
+      opacity: 0;
+
+      img{
+        visibility: hidden;
+      }
+    }
+
+    
+  }
+
+  .full_size{
+    transition: opacity 400ms ease 0ms;
+
+    &.is-loading{
+      opacity: 0;
+    }
+    &.is-loaded{
+      opacity: 1;
+    }
+  }
+  
+}
+
+.project_source{
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  
+  svg{
+    height: 30px;
+    width: 30px;
+  }
+}
