@@ -24,6 +24,7 @@
   background-color: rgba(242, 242, 242, 1);
   overflow: hidden;
   margin: 25px;
+  border-radius: 5px;
 
   img {
     height: 100%;
@@ -85,7 +86,7 @@
   position: fixed;
   bottom: 25px;
   right: 25px;
-  
+
   svg{
     height: 30px;
     width: 30px;
