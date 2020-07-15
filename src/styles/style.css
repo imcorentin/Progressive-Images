@@ -69,39 +69,25 @@
   transition: visibility 0ms ease 400ms;
 }
 
-.image-container .small_size.is-loading {
-  opacity: 1;
-}
-
 .image-container .small_size.is-loading img {
   visibility: visible;
-}
-
-.image-container .small_size.is-loaded {
-  opacity: 0;
 }
 
 .image-container .small_size.is-loaded img {
   visibility: hidden;
 }
 
-.image-container .full_size {
-  -webkit-transition: opacity 400ms ease 0ms;
-  transition: opacity 400ms ease 0ms;
-}
-
-.image-container .full_size.is-loading {
-  opacity: 0;
-}
-
-.image-container .full_size.is-loaded {
-  opacity: 1;
-}
-
 .project_source {
   position: fixed;
   bottom: 25px;
   right: 25px;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+
+.project_source:hover {
+  opacity: 1;
 }
 
 .project_source svg {

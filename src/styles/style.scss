@@ -52,40 +52,32 @@
     }
     
     &.is-loading{
-      opacity: 1;
+      // opacity: 1;
 
       img{
         visibility: visible;
       }
     }
     &.is-loaded{
-      opacity: 0;
+      // opacity: 0;
 
       img{
         visibility: hidden;
       }
     }
-
-    
-  }
-
-  .full_size{
-    transition: opacity 400ms ease 0ms;
-
-    &.is-loading{
-      opacity: 0;
-    }
-    &.is-loaded{
-      opacity: 1;
-    }
-  }
-  
+  }  
 }
 
 .project_source{
   position: fixed;
   bottom: 25px;
   right: 25px;
+  opacity: 0.5;
+  transition: opacity 0.5s ease;
+
+  &:hover{
+    opacity: 1;
+  }
 
   svg{
     height: 30px;
