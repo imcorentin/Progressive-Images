@@ -33,11 +33,9 @@ export const ProgressiveImage = ({ title, thumbnail, source }) => {
           draggable="false"
         />
       </div>
-      <div className={`full_size ${params.loaded ? "is-loaded" : "is-loading"}`}>
-        {params.loaded && (
-          <img src={params.source} alt={params.title} draggable="false" />
-        )}
-      </div>
+      {params.loaded && (
+        <img src={params.source} alt={params.title} draggable="false" />
+      )}
     </div>
   );
 };
